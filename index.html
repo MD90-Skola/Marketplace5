@@ -21,15 +21,6 @@
 
     <!-- MENU HAMBURGER --><!-- MENU HAMBURGER --><!-- MENU HAMBURGER -->
 
-    <li class="nav-item">
-      <label class="toggle-switch">
-          <input type="checkbox" id="darkModeToggle">
-          <span class="slider"></span>
-      </label>
-  </li>
-  
-  <!-- Laddar in JavaScript längst ner i <body> -->
-  <script src="script.js"></script>
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -265,11 +256,26 @@
 </div>
 
 
+<div class="mb-3 form-check terms-checkbox">
+  <input type="checkbox" class="form-check-input" id="terms">
+  <label class="form-check-label" for="terms">
+      Jag godkänner <a href="villkor.html" target="_blank">villkoren</a> och <a href="integritetspolicy.html" target="_blank">integritetspolicyn</a>.
+  </label>
+</div>
+
+
 
       <!-- Registrera-knapp -->
       <button type="submit" class="btn btn-primary w-100">Registrera</button>
   </form>
 </div>
+
+
+
+
+
+
+
 
 
 
@@ -308,59 +314,52 @@
 
 
 
-
-<br>
-<br>
-
-
-<!-- 3x CARDS  -->  <!-- 3x CARDS  -->  <!-- 3x CARDS  -->  <!-- 3x CARDS  -->  
-
-<div class="container">
-  <div class="row gy-3"> <!-- Lägg till "row" här och "gy-3" för mellanrum -->
-
-      <div class="col-md-4">
-          <div class="card" style="width: 65%;"> <!-- Ändra width till 100% för bättre respons -->
-              <img src="/Assets/img/Cloud.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Ladda-upp</h5>
-                  <p class="card-text">AI matchar dig med arbetsgivare</p>
-                  <a href="#" class="btn btn-primary">Läs mer</a>
-              </div>
+<div class="container mt-5">
+  <div class="row g-3">
+      <!-- Ruta 1 (Mörkgrå) -->
+      <div class="col-md-6">
+          <div class="custom-box dark-box">
+              <h5>Sök jobb baserat på avstånd</h5>
+              <p>
+                  Varför söka ett jobb långt ifrån din adress?<br>
+                  Med vår GPS-API får du matchningar nära dig.
+              </p>
           </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width: 65%;">
-              <img src="/Assets/img/Find.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Matcha</h5>
-                  <p class="card-text">Sök närmsta jobben via maps</p>
-                  <a href="#" class="btn btn-primary">Läs mer</a>
-              </div>
+      <!-- Ruta 2 (Ljusgrå) -->
+      <div class="col-md-6">
+          <div class="custom-box light-box">
+              <h5>Ladda upp ditt CV</h5>
+              <p>
+                  Vi läser av dina erfarenheter och visar ditt CV för chefer 
+                  på vår arbetsportal. Ni matchas med varandra!
+              </p>
           </div>
       </div>
 
-      <div class="col-md-4">
-          <div class="card" style="width: 65%;">
-              <img src="/Assets/img/Hand2.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Connecta</h5>
-                  <p class="card-text">Få matching ifrån arbetsgivare</p>
-                  <a href="#" class="btn btn-primary">Läs mer</a>
-              </div>
+      <!-- Ruta 3 (Ljusgrå) -->
+      <div class="col-md-6">
+          <div class="custom-box light-box">
+              <h5>När någon är intresserad</h5>
+              <p>
+                  Om en chef gillar ditt CV kan de kontakta dig direkt, 
+                  så ni kan börja chatta och diskutera tjänsten.
+              </p>
           </div>
       </div>
 
-  </div> <!-- Stäng "row" här -->
-</div> <!-- Stäng "container" här -->
-
-<!-- 3x CARDS  -->  <!-- 3x CARDS  -->  <!-- 3x CARDS  -->  <!-- 3x CARDS  -->  
-
-
-
-
-
-
+      <!-- Ruta 4 (Mörkgrå) -->
+      <div class="col-md-6">
+          <div class="custom-box dark-box">
+              <h5>Dubbel matchning</h5>
+              <p>
+                När både du och arbetsgivaren aktivt söker, ökar träffsäkerheten drastiskt. Ni slipper missa varandra och får dubbelt så stor chans att matchas!
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 
@@ -376,6 +375,21 @@
   <div class="footer-left">
       © 2025 Michel Dahl. Alla rättigheter förbehållna.
   </div>
+
+  <li class="nav-item d-flex align-items-center">
+    <span class="me-2">Dark Mode</span> <!-- Texten till vänster -->
+    <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+    </label>
+</li>
+
+<!-- Laddar in JavaScript längst ner i <body> -->
+<script src="script.js"></script>
+
+
+
+
   <div class="footer-right">
       <a href="https://www.linkedin.com/in/michel-dahl-203832318/" target="_blank">
           <i class="fa-brands fa-linkedin"></i>

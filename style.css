@@ -265,53 +265,59 @@ input:checked + .slider:before {
 
 
 
-
-
-
-
-
-
-
-
-
    /* |-------------------------------|
-   |       3x Cards                   | -------------------------------------------
+   |       4x rutor                  |
    |-------------------------------| */
 
 
 
-   .card-img-top {
-    width: 100%; /* Se till att bilden fyller kortets bredd */
-    height: 200px; /* Låser höjden så alla bilder blir lika stora */
-    object-fit: cover; /* Beskär bilden så den fyller rutan utan att deformeras */
-}
 
 
 
-.card {
-    height: 100%; /* Gör alla kort lika höga */
+
+
+
+
+
+
+
+
+
+.custom-box {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    height: 200px; /* Justera höjd om du vill */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-body {
-    flex-grow: 1; /* Gör att textdelen växer och fyller ut kortet jämnt */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Fördelar text och knapp jämnt */
+/* Mörkgrå rutor (Ruta 1 & 3) */
+.dark-box {
+    background: #333333ae; /* Mörkgrå bakgrund */
+    color: white; /* Vit text för kontrast */
 }
 
-.card-title {
-    min-height: 40px; /* Förhindrar att titeln gör korten ojämna */
+/* Ljusgrå rutor (Ruta 2 & 4) */
+.light-box {
+    background: #ddd; /* Ljusgrå bakgrund */
+    color: rgba(0, 0, 0, 0.535);
 }
 
-.card-text {
-    flex-grow: 1; /* Gör att texten expanderar jämnt */
-}
 
-.card .btn {
-    align-self: flex-start; /* Håller knappen längst ner */
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
