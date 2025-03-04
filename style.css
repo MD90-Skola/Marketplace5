@@ -1,0 +1,422 @@
+
+
+
+
+
+
+
+
+
+
+/* |-------------------------------|
+   |      Dark mode                |  ---------------------------------------
+   |-------------------------------| */
+
+   
+
+
+
+
+
+/* Fixar textfärgen på länkar i Dark Mode */
+.dark-mode .nav-link {
+    color: #ffffff !important; /* Gör alla länkar vita */
+}
+
+.dark-mode .nav-link:hover {
+    color: #ff4d4d !important; /* Gör hover-effekten röd */
+}
+
+
+
+
+
+/* Justera .brand-red i dark mode */
+.dark-mode .brand-red {
+    color: #ff4d4d !important; /* Ljusröd färg i Dark Mode */
+}
+
+/* Justera hover-effekt för länkar */
+.dark-mode .nav-link:hover {
+    color: #ff4d4d !important; /* Samma ljusröda färg vid hover */
+}
+
+/* Fixar hamburgermenyn i dark mode */
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1); /* Gör ikonen vit */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark mode bakgrund och textfärg */
+.dark-mode {
+    background-color: #000000e3 !important;
+    color: #ffffff !important;
+}
+
+/* Dark mode för navbar */
+.dark-mode .navbar {
+    background-color: #222 !important;
+    border-bottom: 1px solid #444;
+}
+
+.dark-mode .navbar .nav-link {
+    color: #ffffff !important;
+}
+
+/* Dark mode för knappar */
+.dark-mode .btn {
+    background-color: #444 !important;
+    border-color: #666 !important;
+}
+
+/* Dark mode för kort */
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: white !important;
+    border: 1px solid #333;
+}
+
+/* Dark mode för footern */
+.dark-mode .footer-copy {
+    background-color: #222 !important;
+    color: #ffffff !important;
+}
+
+
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Toggle-switch knapp */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+
+
+
+
+
+
+
+/* |-------------------------------|
+   |       Meny till nav           |  ---------------------------------------
+   |-------------------------------| */
+
+
+
+
+
+
+
+   
+/* Färgsättning av "Jobb.NET" */
+.brand-black {
+    color: black; /* Jobb i svart */
+    font-weight: bold;
+}
+
+.brand-red {
+    color: red; /* .NET i rött */
+    font-weight: bold;
+}
+
+/* Stil för ikonerna */
+.navbar-nav .nav-item {
+    font-size: 14px; /* Justera textstorlek */
+    padding: 5px 15px; /* Mellanrum mellan knappar */
+}
+
+.navbar-nav .nav-item i {
+    font-size: 15px; /* Gör ikoner större */
+    display: block; /* Placera ikonen ovanför texten */
+    margin-bottom: -10px; /* Avstånd mellan ikon och text */
+}
+
+/* Separationsavstånd mellan huvudmenyn och "Logga in + Registrera" */
+.navbar-nav .separator {
+    width: 50px; /* Skapar ett mellanrum */
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+/* |-------------------------------|
+   |       Carusell  start         | ------------------------------------------
+   |-------------------------------| */
+
+        
+
+
+
+   
+       
+   .carousel-container {
+    
+    max-width: 1700px; /* Maxbredd 500px */
+    width: 100%; /* Anpassar sig om skärmen är mindre */
+    margin: 0 auto; /* Centrerar horisontellt */
+}
+
+#carouselExampleCaptions img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Behåller proportioner */
+    object-position: center top; /* Flyttar bilden uppåt */
+}
+
+
+.carousel-caption {
+    position: absolute;
+    top: 30%; /* Flytta upp texten, justera procenten efter behov */
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+
+
+/* Ändra storlek på texten */
+.carousel-caption h5 {
+    
+    font-size: 3rem; /* Storlek på rubriken */
+    font-weight: bold;
+    text-transform: uppercase; /* Gör texten versaler */
+}
+
+.carousel-caption p {
+    font-size: 4rem; /* Storlek på texten */
+    color: white; /* Vit text */
+    -webkit-text-stroke: 1.2px black;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* |-------------------------------|
+   |       3x Cards                   | -------------------------------------------
+   |-------------------------------| */
+
+
+
+   .card-img-top {
+    width: 100%; /* Se till att bilden fyller kortets bredd */
+    height: 200px; /* Låser höjden så alla bilder blir lika stora */
+    object-fit: cover; /* Beskär bilden så den fyller rutan utan att deformeras */
+}
+
+
+
+.card {
+    height: 100%; /* Gör alla kort lika höga */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1; /* Gör att textdelen växer och fyller ut kortet jämnt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Fördelar text och knapp jämnt */
+}
+
+.card-title {
+    min-height: 40px; /* Förhindrar att titeln gör korten ojämna */
+}
+
+.card-text {
+    flex-grow: 1; /* Gör att texten expanderar jämnt */
+}
+
+.card .btn {
+    align-self: flex-start; /* Håller knappen längst ner */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+   /* |-------------------------------|
+   |       Registrera dig form         |
+   |-------------------------------| */
+
+
+   .register-text01 {
+    position: relative;
+    top: -60px; /* Flytta upp texten 10px */
+    /* Justera siffran för att flytta mer eller mindre */
+}
+
+
+.move-form-up {
+    transform: translateY(-2px); /* Flytta upp formuläret 20px */
+}
+
+
+
+
+
+
+/* Flytta upp hela containern (text + formulär) */
+.move-container {
+    transform: translateY( 10px); /* Flytta upp hela blocket */
+}
+
+/* Flytta bara formuläret uppåt */
+.move-form-up {
+    transform: translateY(-90px); /* Flytta formuläret upp 20px */
+}
+
+/* Flytta bara texten uppåt */
+.register-text01 {
+    transform: translateY(-10px); /* Flytta rubriken upp 10px */
+}
+
+
+
+
+.terms-checkbox {
+    position: relative;
+    top: -px; /* Flytta upp 10px */
+    left: px; /* Flytta höger 20px */
+}
+
+
+
+   
+
+   /* |-------------------------------|
+   |       Meny till nav           |
+   |-------------------------------| */
+
+
+
+   /* |-------------------------------|
+   |       Meny till nav           |
+   |-------------------------------| */
+
+
+
+
+   /* |-------------------------------|
+   |       FOOTER COPY RIGTHS         | -----------------------------------------
+   |-------------------------------| */
+
+
+
+   .footer-copy {
+    width: 100%;
+    height: 50px; /* Höjd för att se bättre ut */
+    background-color: #333; /* Mörk bakgrund */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Lite padding */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-left {
+    font-size: 14px;
+}
+
+.footer-right a {
+    color: white;
+    font-size: 18px;
+    margin-left: 10px; /* 10px mellanrum mellan ikoner */
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    color: #0a66c2; /* LinkedIn blå färg när man hovrar */
+}

@@ -1,0 +1,71 @@
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Kontaktbox */
+.contact-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* "Kontakta" ruta längst upp till höger */
+.contact-header {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Vänster sektion */
+.left-box {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    align-self: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+/* Höger sektion */
+.right-box {
+    width: 55%;
+}
+
+.bio-box {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    resize: none;
+    margin-top: 10px;
+}
+
+/* Ladda upp CV-knapp längst ner */
+.upload-box {
+    margin-top: 20px;
+    text-align: center;
+}
