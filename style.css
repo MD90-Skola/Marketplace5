@@ -12,7 +12,11 @@
    |      Dark mode                |  ---------------------------------------
    |-------------------------------| */
 
-   
+   /* Röd text på hover och vald sida i dark mode */
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
+  color: #ff4d4d !important;
+}
 
 
 
@@ -201,6 +205,60 @@ input:checked + .slider:before {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* |-------------------------------|
+   |       google maps knapp       | ------------------------------------------
+   |-------------------------------| */
+
+   #heroOverlay {
+    max-width: 1140px; /* Eller 1200px, beroende på önskad maxbredd */
+    width: 100%;
+    margin: auto; /* centrerar automatiskt */
+  }
+
+
+
+  .job-search-section {
+    position: relative;
+    z-index: 10; /* viktigast för att ligga över kartan */
+    margin-top: 10px; /* Flyttar sektionen lite uppåt om det behövs */
+  }
+
+
+
+
+  .hide-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+
+
 /* |-------------------------------|
    |       Carusell  start         | ------------------------------------------
    |-------------------------------| */
@@ -253,12 +311,31 @@ input:checked + .slider:before {
 
 }
 
+   /* |-------------------------------|
+   |          Stor text               |
+   |        Vad är jobbnet            |
+   |-------------------------------| */
 
 
 
 
 
 
+
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .big-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    /* Lägg gärna till text-transform: uppercase; eller liknande om du vill */
+  }
 
 
 
@@ -270,13 +347,14 @@ input:checked + .slider:before {
    |-------------------------------| */
 
 
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-
-
-
-
-
-
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
 
 
 
@@ -396,8 +474,26 @@ input:checked + .slider:before {
 
 
    /* |-------------------------------|
-   |       Meny till nav           |
+   |      Hitta jobb via GPS-karta   
+      Bild                           |
    |-------------------------------| */
+
+   
+
+/* zoom-img är klassen vi just lade till i HTML */
+.zoom-img {
+    overflow: hidden; /* Gör att zoom-effekten håller sig inom ramen */
+    border-radius: 2%; /* Rundade hörn på div:en */
+  }
+  
+  .zoom-img img {
+    transition: transform 0.3s ease; /* Mjuk övergång */
+  }
+  
+  .zoom-img:hover img {
+    transform: scale(3); /* Gör bilden 10% större vid hover */
+  }
+
 
 
 

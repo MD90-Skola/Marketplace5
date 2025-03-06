@@ -22,291 +22,215 @@
     <!-- MENU HAMBURGER --><!-- MENU HAMBURGER --><!-- MENU HAMBURGER -->
 
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-          <!-- Ändrat så "Jobb" är svart och ".NET" är röd -->
-          <a class="navbar-brand" href="#">
-              <span class="brand-black">Jobb</span><span class="brand-red">.NET</span>
-          </a>
+    <style>
+      .nav-link:hover,
+      .nav-link.active {
+        color: red !important;
+      }
   
-          <!-- Hamburgermeny-knapp (visas endast på små skärmar) -->
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+      .navbar-nav .nav-link {
+        color: #555;
+        transition: color 0.3s;
+      }
   
-          <!-- Meny för stora skärmar (Endast ikoner + text) -->
-          <div class="collapse navbar-collapse d-none d-lg-block">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item text-center">
-                      <a class="nav-link" href="#">
-                          <i class="fa-solid fa-house"></i><br> Hem
-                      </a>
-                  </li>
-                  <li class="nav-item text-center">
-                      <a class="nav-link" href="#">
-                          <i class="fa-solid fa-bullhorn"></i><br> Annons
-                      </a>
-                  </li>
-                  <li class="nav-item text-center">
-                      <a class="nav-link" href="#">
-                          <i class="fa-solid fa-gavel"></i><br> Hjälp Torget
-                      </a>
-                  </li>
+      .separator {
+        flex-grow: 1;
+      }
   
-                  <!-- Skapar ett mellanrum innan "Logga in" + "Registrera" -->
-                  <li class="nav-item separator"></li>
+      .nav-link i {
+        font-size: 1.2rem;
+      }
   
-                  <!-- Logga in & Registrera - ihopsatta -->
-                  <li class="nav-item text-center">
-                      <a class="nav-link" href="#">
-                          <i class="fa-solid fa-user"></i><br> Logga in
-                      </a>
-                  </li>
-                  <li class="nav-item text-center">
-                      <a class="nav-link" href="#">
-                          <i class="fa-solid fa-user-plus"></i><br> Registrera
-                      </a>
-                  </li>
-              </ul>
-          </div>
+      .brand-black { color: black; }
+      .brand-red { color: red; }
+    </style>
   
-          <!-- Offcanvas-meny för små skärmar (Hamburgermeny, utan ikoner) -->
-          <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar">
-              <div class="offcanvas-header">
-                  <h5 class="offcanvas-title">Meny</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-              </div>
-              <div class="offcanvas-body">
-                  <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link" href="#">Hem</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">Lägg in annons</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">Hjälp Torget</a></li>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body class="p-3 m-0 border-0 bd-example">
   
-                      <!-- Skapar ett mellanrum innan "Logga in" + "Registrera" -->
-                      <li class="nav-item separator"></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <span class="brand-black">Jobb</span><span class="brand-red">.NET</span>
+      </a>
   
-                      <li class="nav-item"><a class="nav-link" href="#">Logga in</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">Registrera</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </nav>
-
-
-
-
-
-  
-  </body>
-
-
-
-
-
-    <!-- MENU HAMBURGER --><!-- MENU HAMBURGER --><!-- MENU HAMBURGER -->
-
-
-
-
-
-
-  <!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  
-<div class="carousel-container">
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-
-
-
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Assets/img/home.jpg" class="d-block w-100" alt="First Slide">
-                <div class="carousel-caption d-none d-md-block">
-                    
-                    
-                </div>
-            </div>
-
-
-
-
-
-
-            <div class="carousel-item">
-                <img src="Assets/img/home.jpg" class="d-block w-100" alt="Second Slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="carousel-item">
-                <img src="Assets/img/Home.jpg" class="d-block w-100" alt="Third Slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
-            </div>
-
-
-
-
-
-
-            
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-      
-<!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  <!-- Start carusel -->  
-
-
-<!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> 
-
-
-
-<div class="container move-container d-flex flex-column align-items-center justify-content-center text-center" style="height: 90vh;">
-  <h1 class="display-1 fw-bold mb-4 register-text01">Registrera dig</h1>
-
-  <form class="form-container p-4 move-form-up">
-      <!-- Namn + Efternamn på samma rad -->
-      <div class="row mb-3">
-          <div class="col-md-6">
-              <label for="firstName" class="form-label">Förnamn</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Ditt förnamn">
-          </div>
-          <div class="col-md-6">
-              <label for="lastName" class="form-label">Efternamn</label>
-              <input type="text" class="form-control" id="lastName" placeholder="Ditt efternamn">
-          </div>
-      </div>
-
-      <!-- Privat/Företag + Organisationsnummer på samma rad -->
-      <div class="row mb-3">
-          <div class="col-md-6">
-              <label for="userType" class="form-label">Välj typ</label>
-              <select class="form-select" id="userType" onchange="toggleOrgNumber()">
-                  <option value="privat">Privat</option>
-                  <option value="foretag">Företag</option>
-              </select>
-          </div>
-          <div class="col-md-6">
-              <label for="orgNumber" class="form-label">Organisationsnummer</label>
-              <input type="text" class="form-control" id="orgNumber" placeholder="ORG NR" disabled>
-          </div>
-      </div>
-
-
-      <!-- Telefonnummer -->
-      <div class="mb-3">
-        <label for="phone" class="form-label">Telefonnummer</label>
-        <input type="tel" class="form-control" id="phone" placeholder="Ditt telefonnummer">
-    </div>
-
-
-
-
-
-      <!-- E-post -->
-      <div class="mb-3">
-          <label for="email" class="form-label">E-post</label>
-          <input type="email" class="form-control" id="email" placeholder="Din e-post">
-      </div>
-
-
-
-
-
-
-
-<!-- Lösenord -->
-<div class="mb-3">
-  <label for="password" class="form-label">Lösenord</label>
-  <div class="input-group">
-      <input type="password" class="form-control" id="password" placeholder="Välj ett lösenord">
-      <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-          <i class="fa-solid fa-eye"></i> <!-- Ikon för att visa/dölja lösenord -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
       </button>
-  </div>
-</div>
-
-<!-- Bekräfta lösenord -->
-<div class="mb-3">
-  <label for="confirmPassword" class="form-label">Bekräfta lösenord</label>
-  <input type="password" class="form-control" id="confirmPassword" placeholder="Upprepa lösenord">
-</div>
-
-
-<div class="mb-3 form-check terms-checkbox">
-  <input type="checkbox" class="form-check-input" id="terms">
-  <label class="form-check-label" for="terms">
-      Jag godkänner <a href="villkor.html" target="_blank">villkoren</a> och <a href="integritetspolicy.html" target="_blank">integritetspolicyn</a>.
-  </label>
-</div>
-
-
-
-      <!-- Registrera-knapp -->
-      <button type="submit" class="btn btn-primary w-100">Registrera</button>
-
-
-      
-  </form>
-</div>
-
-
-
-
-<div class="text-center">
-  <img 
-    src="Assets/img/ArrowD.png" 
-    alt="Beskrivande text" 
-    style="width: 20%; display: inline-block; transform: translateY(-110px);"
-  >
-</div>
-
-
-
-<!-- Popup Modal -->
-<!-- Popup Modal -->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="registerModalLabel">Registrering slutförd</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Stäng"></button>
-          </div>
-          <div class="modal-body">
-              <p id="registerMessage"></p>
-          </div>
-          
-
-          
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-          </div>
+  
+      <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item text-center">
+            <a class="nav-link active" href="index.html">
+              <i class="fa-solid fa-house"></i><br>Hem
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" href="annons.html">
+              <i class="fa-solid fa-bullhorn"></i><br>Lägg in annons
+            </a>
+          </li>
+          <li class="nav-item separator"></li>
+          <li class="nav-item text-center">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-right-to-bracket"></i><br>Logga in
+            </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" href="reg.html">
+              <i class="fa-solid fa-user-plus"></i><br>Registrera
+            </a>
+          </li>
+        </ul>
       </div>
+  
+      <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Meny</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Hem</a></li>
+            <li class="nav-item"><a class="nav-link" href="annons.html">Lägg in annons</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Hjälp Torget</a></li>
+            <li class="nav-item separator"></li>
+            <li class="nav-item"><a class="nav-link" href="#">Logga in</a></li>
+            <li class="nav-item"><a class="nav-link" href="reg.html">Registrera</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===================
+    SÖK MENU 
+==================== -->
+
+
+
+<section class="py-5 job-search-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow p-4">
+          <h2 class="text-center mb-4">Sök jobb nära dig</h2>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Hemadress</label>
+                <input type="text" class="form-control" placeholder="Ange din adress">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Jobbtitel</label>
+                <input type="text" class="form-control" placeholder="Ange jobbtitel">
+              </div>
+
+              <!-- Arbetstider med dubbelklickfunktion -->
+              <div class="col-md-12">
+                <label class="form-label">Välj arbetstider</label>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                  <button type="button" class="btn btn-outline-success work-btn" data-selected="none">Dag</button>
+                  <button type="button" class="btn btn-outline-success work-btn" data-selected="none">Kväll</button>
+                  <button type="button" class="btn btn-outline-success work-btn" data-selected="none">Natt</button>
+                  <button type="button" class="btn btn-outline-success work-btn" data-selected="none">Helger</button>
+                  <button type="button" class="btn btn-outline-success work-btn" data-selected="none">Extra</button>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label">Kategori</label>
+                <select class="form-select">
+                  <option selected>Välj en kategori</option>
+                  <option>Transport</option>
+                  <option>Sjukvård</option>
+                  <option>Hantverkare</option>
+                  <option>Säljare</option>
+                  <option>IT & Teknik</option>
+                  <option>Restaurang</option>
+                  <option>Administration</option>
+                  <option>Lager & Logistik</option>
+                  <option>Utbildning</option>
+                  <option>Ekonomi</option>
+                  <option>Bygg & Anläggning</option>
+                  <option>Industri</option>
+                  <option>Kundtjänst</option>
+                  <option>Försäljning</option>
+                  <option>Media & Kommunikation</option>
+                  <option>Juridik</option>
+                  <option>Fastighet</option>
+                  <option>Marknadsföring</option>
+                  <option>Säkerhet</option>
+                  <option>Jordbruk & Natur</option>
+                </select>
+              </div>
+
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-success w-100 mt-3">Sök</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".work-btn").forEach(button => {
+      button.addEventListener("click", function() {
+        if (this.dataset.selected === "none") {
+          this.classList.remove("btn-outline-success", "btn-outline-danger");
+          this.classList.add("btn-success", "text-white");
+          this.dataset.selected = "yes";
+        } else if (this.dataset.selected === "yes") {
+          this.classList.remove("btn-success", "text-white");
+          this.classList.add("btn-danger", "text-white");
+          this.dataset.selected = "no";
+        } else {
+          this.classList.remove("btn-danger", "text-white");
+          this.classList.add("btn-outline-success");
+          this.dataset.selected = "none";
+        }
+      });
+    });
+  });
+</script>
+
+  
+
+<!-- ===================
+    SÖK MENU 
+==================== -->
 
 
 
@@ -315,90 +239,129 @@
 
 
 
-<!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> <!-- REGISTRERA DIG  --> 
 
 
 
 
 
 
+<!-- ===================
+     GOOGLE MAPS 
+==================== -->
+
+
+
+
+<!-- Hero Section med karta och overlay -->
+<section id="mapSection" class="position-relative d-flex align-items-center justify-content-center text-center bg-light" style="height:80vh; overflow:hidden;">
+
+  <!-- Google Maps iframe -->
+  <iframe id="mapFrame" 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52145.93465822929!2d11.985965176978462!3d57.715146181091946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff36f1f0e32b5%3A0x400fef341be0c90!2sGöteborg!5e0!3m2!1ssv!2sse&"
+  style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+</iframe>
+
+  <!-- Overlay-rutan -->
+  <div id="heroOverlay" class="p-5 bg-white bg-opacity-75 rounded-3 shadow position-relative">
+    <h1 class="display-3 fw-bold mb-3">Välkommen till Jobb.NET</h1>
+    <p class="lead mb-4">
+      Hitta jobb snabbare och närmare genom vår unika GPS-baserade sökning.
+    </p>
+    <button id="startBtn" class="btn btn-primary btn-lg">Kom igång</button>
+  </div>
+
+</section>
 
 
 
 
 
 
+<!-- ===================
+     GOOGLE MAPS 
+==================== -->
 
 
-<div class="container mt-5">
-  <div class="row g-3">
+
+
+  <!-- ===================
+       INTRO TEXT
+  ==================== -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Vad är Jobb.NET?</h2>
+      <p class="lead text-center mx-auto" style="max-width: 800px;">
+        Tänk dig en jobbportal där du söker via <strong>kartan</strong> istället
+        för att traggla igenom oändliga textannonser. <strong>Jobb.NET</strong>
+        matchar dig både av dina <strong>egna jobbsökningar</strong> och av
+        arbetsgivare som aktivt letar just din kompetens!
+      </p>
+    </div>
+  </section>
+  
+  <div class="container mt-5">
+    <div class="row g-3">
       <!-- Ruta 1 (Mörkgrå) -->
       <div class="col-md-6">
-          <div class="custom-box dark-box">
-              <h5>Sök jobb baserat på avstånd</h5>
-              <p>
-                  Varför söka ett jobb långt ifrån din adress?<br>
-                  Med vår GPS-API får du matchningar nära dig.
-              </p>
-          </div>
+        <div class="custom-box dark-box hover-lift">
+          <h5>Sök jobb baserat på avstånd</h5>
+          <p>
+            Varför söka ett jobb långt ifrån din adress?<br>
+            Med vår GPS-API får du matchningar nära dig.
+          </p>
+        </div>
       </div>
-
+  
       <!-- Ruta 2 (Ljusgrå) -->
       <div class="col-md-6">
-          <div class="custom-box light-box">
-              <h5>Ladda upp ditt CV</h5>
-              <p>
-                  Vi läser av dina erfarenheter och visar ditt CV för chefer 
-                  på vår arbetsportal. Ni matchas med varandra!
-              </p>
-          </div>
+        <div class="custom-box light-box hover-lift">
+          <h5>Ladda upp ditt CV</h5>
+          <p>
+            Vi läser av dina erfarenheter och visar ditt CV för chefer 
+            på vår arbetsportal. Ni matchas med varandra!
+          </p>
+        </div>
       </div>
-
+  
       <!-- Ruta 3 (Ljusgrå) -->
       <div class="col-md-6">
-          <div class="custom-box light-box">
-              <h5>När någon är intresserad</h5>
-              <p>
-                  Om en chef gillar ditt CV kan de kontakta dig direkt, 
-                  så ni kan börja chatta och diskutera tjänsten.
-              </p>
-          </div>
+        <div class="custom-box light-box hover-lift">
+          <h5>När någon är intresserad</h5>
+          <p>
+            Om en chef gillar ditt CV kan de kontakta dig direkt, 
+            så ni kan börja chatta och diskutera tjänsten.
+          </p>
+        </div>
       </div>
-
+  
       <!-- Ruta 4 (Mörkgrå) -->
       <div class="col-md-6">
-          <div class="custom-box dark-box">
-              <h5>Dubbel matchning</h5>
-              <p>
-                När både du och arbetsgivaren aktivt söker efter varandra ökar chanserna att ni matchar – nästan dubbelt upp. Du slipper missa drömjobbet, och företag får snabbare tag i rätt kompetens. Två aktiva sökningar ger er större träffsäkerhet – dubbelt så stor chans att hitta varandra!
-              </p>
-          </div>
+        <div class="custom-box dark-box hover-lift">
+          <h5>Dubbel matchning</h5>
+          <p>
+            När både du och arbetsgivaren aktivt söker efter varandra ökar chanserna att ni matchar – nästan dubbelt upp. Du slipper missa drömjobbet, och företag får snabbare tag i rätt kompetens. Två aktiva sökningar ger er större träffsäkerhet – dubbelt så stor chans att hitta varandra!
+          </p>
+        </div>
       </div>
+    </div>
   </div>
-</div>
 
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
-
-
-
-
-
-
-
-<div class="text-center">
-  <img 
-    src="Assets/img/DemoMap.jpeg" 
-    alt="Beskrivande text för DemoKarta" 
-
-  >
-</div>
-
-
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -407,13 +370,56 @@
 
 
 
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      
+      <!-- HÄR HAR KLASSEN lagts till -->
+      <div class="col-md-6 zoom-img">
+        <img
+          src="Assets/img/DemoMap.jpeg"
+          alt="DemoKarta"
+          class="img-fluid rounded-3 shadow"
+        >
+      </div>
+
+      <div class="col-md-6">
+        <h3 class="fw-bold mb-3">Hitta jobb via GPS-karta</h3>
+        <p>
+          Ange var du bor och se lediga jobb i närheten. Du kan filtrera på 
+          bransch och kategori eller bara <strong>kolla runt på kartan</strong>.
+          Aldrig mer långa, vita standardannonser!
+        </p>
+        <h3 class="fw-bold mb-3">Ladda upp ditt CV</h3>
+        <p>
+          När du laddar upp ditt CV hamnar det i en databas för arbetsgivare 
+          att söka i. Erfarna lastbilschaufförer, IT-specialister eller
+          säljare – alla kan hittas om du laddar upp rätt info.
+        </p>
+        <a href="reg.html" class="btn btn-success">Skapa konto nu</a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
 
 <footer class="footer-copy">
   <div class="footer-left">
-      © 2025 Michel Dahl. Alla rättigheter förbehållna.
+      © 2025 Michel Dahl. Alla rättigheter förbehållna. (får ej kopieras eller spridas)
   </div>
 
   <li class="nav-item d-flex align-items-center">
@@ -426,6 +432,7 @@
 
 <!-- Laddar in JavaScript längst ner i <body> -->
 <script src="script.js"></script>
+
 
 
 

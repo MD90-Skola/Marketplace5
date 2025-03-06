@@ -1,148 +1,100 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
+    // DARK MODE
     const toggleSwitch = document.getElementById("darkModeToggle");
     const body = document.body;
-
-    // Kolla om dark mode var aktiverat senast
-    if (localStorage.getItem("dark-mode") === "enabled") {
+  
+    if (toggleSwitch) {
+      if (localStorage.getItem("dark-mode") === "enabled") {
         body.classList.add("dark-mode");
         toggleSwitch.checked = true;
+      }
+  
+      toggleSwitch.addEventListener("change", function () {
+        body.classList.toggle("dark-mode", this.checked);
+        localStorage.setItem("dark-mode", this.checked ? "enabled" : "disabled");
+      });
     }
-
-    // När användaren klickar på knappen
-    toggleSwitch.addEventListener("change", function () {
-        if (toggleSwitch.checked) {
-            body.classList.add("dark-mode");
-            localStorage.setItem("dark-mode", "enabled");
-        } else {
-            body.classList.remove("dark-mode");
-            localStorage.removeItem("dark-mode");
-        }
-    });
-});
-
-
-
-
-
-
-
-
-function toggleOrgNumber() {
-    const userType = document.getElementById("userType").value;
+  
+    // TOGGLE ORGANISATIONSNUMMER
+    const userType = document.getElementById("userType");
     const orgNumberInput = document.getElementById("orgNumber");
-
-    if (userType === "foretag") {
-        orgNumberInput.disabled = false; // Aktivera fältet
-        orgNumberInput.placeholder = "Fyll i ditt organisationsnummer";
-    } else {
-        orgNumberInput.disabled = true; // Inaktivera fältet
-   
-        orgNumberInput.value = ""; // Rensa fältet
-        orgNumberInput.placeholder = "Endast för företag";
+  
+    if (userType && orgNumberInput) {
+      userType.addEventListener("change", function() {
+        orgNumberInput.disabled = (this.value !== "foretag");
+        orgNumberInput.placeholder = (this.value === "foretag") ? 
+          "Fyll i organisationsnummer" : "Endast för företag";
+        if(this.value !== "foretag") orgNumberInput.value = "";
+      });
     }
-}
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Se till att formuläret existerar
-    const form = document.querySelector("form");
-    if (!form) {
-        console.error("❌ Formuläret hittades inte!");
-        return;
-    }
-
-    // Lyssna på formulärens submit-händelse
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Hindrar sidan från att laddas om
-
-        // Hämta användardata
-        const firstName = document.getElementById("firstName").value.trim();
-        const lastName = document.getElementById("lastName").value.trim();
-        const email = document.getElementById("email").value.trim();
-
-        // Kontrollera att alla fält är ifyllda
-        if (!firstName || !lastName || !email) {
-            alert("⚠️ Fyll i alla fält innan du registrerar dig!");
-            return;
-        }
-
-        // Skapa bekräftelsemeddelandet
-        const message = `
-            <strong>Tack, ${firstName} ${lastName}!</strong> 🎉
-            <br> Din registrering är klar. 
-            <br> En verifieringslänk har skickats till <strong>${email}</strong>.
-            <br> Vänligen kolla din e-post och följ instruktionerna.
-        `;
-
-        // Sätt texten i modalens innehåll
-        document.getElementById("registerMessage").innerHTML = message;
-
-        // Hämta modal-elementet
-        const registerModal = document.getElementById("registerModal");
-        if (!registerModal) {
-            console.error("❌ Modal-fönstret hittades inte!");
-            return;
-        }
-
-        // Initialisera och visa Bootstrap Modal
-        const modalInstance = new bootstrap.Modal(registerModal);
-        modalInstance.show();
-
-        // Återställ formuläret efter registrering
-        form.reset();
-    });
-});
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
+  
+    // VISA/DÖLJ LÖSENORD
     const passwordInput = document.getElementById("password");
     const togglePasswordBtn = document.getElementById("togglePassword");
-
+  
     if (passwordInput && togglePasswordBtn) {
-        togglePasswordBtn.addEventListener("click", function () {
-            const icon = this.querySelector("i");
-
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text"; // Visa lösenordet
-                icon.classList.remove("fa-eye");
-                icon.classList.add("fa-eye-slash");
-            } else {
-                passwordInput.type = "password"; // Dölj lösenordet
-                icon.classList.remove("fa-eye-slash");
-                icon.classList.add("fa-eye");
-            }
-        });
-    } else {
-        console.error("Lösenordsfältet eller knappen hittades inte!");
+      togglePasswordBtn.addEventListener("click", () => {
+        const icon = togglePasswordBtn.querySelector("i");
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        icon.classList.toggle("fa-eye", !isPassword);
+        icon.classList.toggle("fa-eye-slash", isPassword);
+      });
     }
-});
-
-
-
-document.querySelector("form").addEventListener("submit", function (e) {
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (password !== confirmPassword) {
-        e.preventDefault(); // Stoppa formuläret från att skickas
-        alert("Lösenorden matchar inte! 🔒");
+  
+    // FORMULÄR SUBMIT-HANTERING (ENDAST OM FORMULÄR FINNS)
+    const form = document.querySelector("form");
+  
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        const firstName = document.getElementById("firstName")?.value.trim();
+        const lastName = document.getElementById("lastName")?.value.trim();
+        const email = document.getElementById("email")?.value.trim();
+        const password = document.getElementById("password")?.value;
+        const confirmPassword = document.getElementById("confirmPassword")?.value;
+        const terms = document.getElementById("terms")?.checked;
+  
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+          alert("⚠️ Fyll i alla fält!");
+          return;
+        }
+  
+        if (password !== confirmPassword) {
+          alert("🔒 Lösenorden matchar inte!");
+          return;
+        }
+  
+        if (!terms) {
+          alert("✅ Du måste godkänna villkoren!");
+          return;
+        }
+  
+        const registerMessage = document.getElementById("registerMessage");
+        const registerModal = document.getElementById("registerModal");
+  
+        if (registerMessage && registerModal) {
+          registerMessage.innerHTML = `
+            <strong>Tack, ${firstName} ${lastName}!</strong> 🎉<br>
+            En verifieringslänk har skickats till <strong>${email}</strong>.
+          `;
+          const modalInstance = new bootstrap.Modal(registerModal);
+          modalInstance.show();
+          form.reset();
+        }
+      });
     }
-});
-
-
-
-document.querySelector("form").addEventListener("submit", function (e) {
-    const terms = document.getElementById("terms");
-
-    if (!terms.checked) {
-        e.preventDefault(); // Stoppa registrering
-        alert("Du måste godkänna villkoren innan du registrerar dig!");
+  
+    // GOOGLE MAPS - DÖLJ OVERLAY
+    const startBtn = document.getElementById("startBtn");
+    const heroOverlay = document.getElementById("heroOverlay");
+  
+    if (startBtn && heroOverlay) {
+      startBtn.addEventListener("click", () => {
+        heroOverlay.classList.add("hide-overlay");
+      });
     }
-});
+  
+  });
